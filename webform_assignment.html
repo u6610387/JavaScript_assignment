@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Add New Item</title>
+  </head>
+
+  <body>
+    <form
+      action="https://athiphat-mybackend-01.southeastasia.cloudapp.azure.com/api/product"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <!-- General Info -->
+      <fieldset>
+        <legend>General Info</legend>
+
+        <p>
+          <label for="itemName">Item Name</label><br />
+          <input type="text" id="itemName" name="itemName" size="50" maxlength="500" />
+        </p>
+
+        <p>
+          <label for="itemDescription">Description</label><br />
+          <textarea id="itemDescription" name="itemDescription" cols="50" rows="5"></textarea>
+        </p>
+
+        <p>
+          <label for="coverImage">Cover Image</label><br />
+          <input type="file" id="coverImage" name="coverImage" />
+        </p>
+
+        <p>
+          <label for="category">Category</label><br />
+          <select id="category" name="category">
+            <option value="notSpecified">Not Specified</option>
+            <option value="consumption">Consumption</option>
+            <option value="household">Household</option>
+            <option value="electronic">Electronic</option>
+            <option value="gadget">Gadget</option>
+          </select>
+        </p>
+      </fieldset>
+
+      <!-- Misc -->
+      <fieldset>
+        <legend>Misc.</legend>
+
+        <p>
+          <label for="inventoryAmount">Inventory Amount</label><br />
+          <input type="number" id="inventoryAmount" name="inventoryAmount" />
+        </p>
+
+        <p>
+          <label for="listPrice">List Price</label><br />
+          <input type="number" id="listPrice" name="listPrice" />
+        </p>
+
+        <p>Available Stores</p>
+        <label><input type="checkbox" name="availableStore[]" value="Bangkok" /> Bangkok</label>
+        <label><input type="checkbox" name="availableStore[]" value="Pattaya" /> Pattaya</label>
+        <label><input type="checkbox" name="availableStore[]" value="Phuket" /> Phuket</label>
+
+        <p>Active Status</p>
+        <label><input type="radio" name="status" value="Active" /> Active</label>
+        <label><input type="radio" name="status" value="Inactive" /> Inactive</label>
+      </fieldset>
+
+      <!-- Staff -->
+      <fieldset>
+        <legend>Staff</legend>
+        <p>
+          <label for="staffEmail">Staff Email</label><br />
+          <input type="email" id="staffEmail" name="staffEmail" />
+        </p>
+      </fieldset>
+
+      <button type="submit">Submit Form</button>
+    </form>
+  </body>
+</html>
